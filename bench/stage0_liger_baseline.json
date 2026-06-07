@@ -1,0 +1,38 @@
+liger_llama_swiglu_rmsnorm_combined_ms: 0.07504317909479141
+{
+  "baseline_metric_extracted": true,
+  "device_name": "AMD Instinct MI355X",
+  "dtype": "bf16",
+  "gcn_arch": "gfx950:sramecc+:xnack-",
+  "iters": 30,
+  "parity_note": "Future ThunderKittens outputs must compare against these Liger baseline kernels; PyTorch reference diffs are informational for bf16.",
+  "schema_version": "stage0_harness.v1",
+  "shapes": [
+    {
+      "combined_ms": 0.07504317909479141,
+      "hidden": 8192,
+      "intermediate": 14336,
+      "rmsnorm_max_abs_diff": 0.0625,
+      "rmsnorm_ms": 0.04013394936919212,
+      "shape": "llama3.3-70b-ffn",
+      "swiglu_max_abs_diff": 0.0625,
+      "swiglu_ms": 0.03490922972559929,
+      "tokens": 256
+    },
+    {
+      "combined_ms": 0.07257331162691116,
+      "hidden": 5120,
+      "intermediate": 8192,
+      "rmsnorm_max_abs_diff": 0.0625,
+      "rmsnorm_ms": 0.04001893103122711,
+      "shape": "qwen3-32b-ffn",
+      "swiglu_max_abs_diff": 0.0625,
+      "swiglu_ms": 0.03255438059568405,
+      "tokens": 256
+    }
+  ],
+  "torch_reference_lt_1e_3": false,
+  "torch_version": "2.9.1+rocm7.2.0.git7e1940d4",
+  "warmup": 10,
+  "worst_torch_reference_max_abs_diff": 0.0625
+}
